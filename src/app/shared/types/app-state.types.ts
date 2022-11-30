@@ -1,5 +1,9 @@
-import { AuthState } from 'src/app/auth/store/register/register.reducer';
+import { LoginState } from 'src/app/auth/store/login/login.reducer';
+import { RegisterState } from 'src/app/auth/store/register/register.reducer';
+import { UserState } from 'src/app/auth/store/user/user.reducer';
 
 export interface AppState {
-  auth: AuthState;
+  register: RegisterState;
+  login: LoginState;
+  user: UserState;
 }

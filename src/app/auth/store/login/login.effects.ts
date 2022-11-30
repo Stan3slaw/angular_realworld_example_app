@@ -3,35 +3,35 @@ import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { Actions, createEffect, ofType } from '@ngrx/effects';
 import { catchError, of, map, mergeMap, tap } from 'rxjs';
-import { PersistanceService } from 'src/app/shared/services/persistance.service';
 
+import { PersistanceService } from '../../../shared/services/persistance.service';
 import { AuthService } from '../../services/auth.service';
-import { registerFailed, registerInitialized, registerSuccessful } from './register.actions';
+import { loginFailed, loginInitialized, loginSuccessful } from './login.actions';
 
 @Injectable()
-export class RegisterEffects {
-  register$ = createEffect(() =>
+export class LoginEffects {
+  login$ = createEffect(() =>
     this.actions$.pipe(
-      ofType(registerInitialized),
-      mergeMap(({ registerDto }) =>
-        this.authService.register(registerDto).pipe(
+      ofType(loginInitialized),
+      mergeMap(({ loginDto }) =>
+        this.authService.login(loginDto).pipe(
           map((userResponseDto) => {
             this.persistanceService.set('jwt-token', userResponseDto.token);
 
-            return registerSuccessful({ userResponseDto });
+            return loginSuccessful({ userResponseDto });
           }),
           catchError((errorResponse: HttpErrorResponse) =>
-            of(registerFailed({ errorsResponse: errorResponse.error.errors })),
+            of(loginFailed({ errorsResponse: errorResponse.error.errors })),
           ),
         ),
       ),
     ),
   );
 
-  redirectOnSuccessfulRegistration$ = createEffect(
+  redirectOnSuccessfulLogin$ = createEffect(
     () =>
       this.actions$.pipe(
-        ofType(registerSuccessful),
+        ofType(loginSuccessful),
         tap(() => {
           this.router.navigateByUrl('/');
         }),

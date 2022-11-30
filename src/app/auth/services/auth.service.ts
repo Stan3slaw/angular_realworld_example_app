@@ -4,16 +4,32 @@ import { map } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 
 import { environment } from '../../../environments/environment';
-import type { UserResponseDto } from '../../shared/types/user.types';
-import type { AuthResponseDto, RegisterDto } from '../types/auth.types';
+import type { UserDto } from '../../shared/types/user.types';
+import type { AuthResponseDto, LoginDto, RegisterDto } from '../types/auth.types';
 
 @Injectable()
 export class AuthService {
   constructor(private http: HttpClient) {}
 
-  register(registerDto: RegisterDto): Observable<UserResponseDto> {
+  private getUser(response: AuthResponseDto): UserDto {
+    return response.user;
+  }
+
+  register(registerDto: RegisterDto): Observable<UserDto> {
     const url = environment.apiUrl + '/users';
 
-    return this.http.post<AuthResponseDto>(url, registerDto).pipe(map((response: AuthResponseDto) => response.user));
+    return this.http.post<AuthResponseDto>(url, registerDto).pipe(map(this.getUser));
+  }
+
+  login(loginDto: LoginDto): Observable<UserDto> {
+    const url = environment.apiUrl + '/users/login';
+
+    return this.http.post<AuthResponseDto>(url, loginDto).pipe(map(this.getUser));
+  }
+
+  getCurrentUser(): Observable<UserDto> {
+    const url = environment.apiUrl + '/user';
+
+    return this.http.get<AuthResponseDto>(url).pipe(map(this.getUser));
   }
 }

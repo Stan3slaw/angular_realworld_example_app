@@ -1,4 +1,4 @@
-import { UserResponseDto } from 'src/app/shared/types/user.types';
+import { UserDto } from 'src/app/shared/types/user.types';
 
 export interface RegisterDto {
   user: {
@@ -8,6 +8,13 @@ export interface RegisterDto {
   };
 }
 
+export interface LoginDto {
+  user: {
+    email: string;
+    password: string;
+  };
+}
+
 export interface AuthResponseDto {
-  user: UserResponseDto;
+  user: UserDto;
 }

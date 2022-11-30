@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 
 @Injectable()
 export class PersistanceService {
-  set(key: string, data: any): void {
+  set(key: string, data: unknown): void {
     try {
       localStorage.setItem(key, JSON.stringify(data));
     } catch (error) {
@@ -10,7 +10,7 @@ export class PersistanceService {
     }
   }
 
-  get(key: string): any {
+  get(key: string): unknown {
     try {
       return JSON.parse(localStorage.getItem(key) as string);
     } catch (error) {

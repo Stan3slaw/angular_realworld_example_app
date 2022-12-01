@@ -12,6 +12,7 @@ import { AuthModule } from './auth/auth.module';
 import { NavbarModule } from './shared/modules/navbar/navbar.module';
 import { PersistanceService } from './shared/services/persistance.service';
 import { AuthInterceptor } from './auth/services/auth.interceptor';
+import { GlobalFeedModule } from './global-feed/global-feed.module';
 
 @NgModule({
   declarations: [AppComponent],
@@ -27,6 +28,7 @@ import { AuthInterceptor } from './auth/services/auth.interceptor';
     HttpClientModule,
     AuthModule,
     NavbarModule,
+    GlobalFeedModule,
   ],
   providers: [
     PersistanceService,

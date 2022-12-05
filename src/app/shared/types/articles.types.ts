@@ -16,3 +16,10 @@ export interface Article {
 export interface ArticleResponseDto {
   article: Article;
 }
+
+export interface CreateUpdateArticleDto {
+  title: string;
+  description: string;
+  body: string;
+  tagList: string[];
+}

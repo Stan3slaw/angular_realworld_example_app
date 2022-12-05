@@ -16,6 +16,7 @@ import { AuthInterceptor } from './auth/services/auth.interceptor';
 import { GlobalFeedModule } from './global-feed/global-feed.module';
 import { PersonalFeedModule } from './personal-feed/personal-feed.module';
 import { FeedByTagModule } from './feed-by-tag/feed-by-tag.module';
+import { CreateArticleModule } from './create-article/create-article.module';
 
 @NgModule({
   declarations: [AppComponent],
@@ -34,6 +35,7 @@ import { FeedByTagModule } from './feed-by-tag/feed-by-tag.module';
     GlobalFeedModule,
     PersonalFeedModule,
     FeedByTagModule,
+    CreateArticleModule,
     ArticleModule,
   ],
   providers: [

@@ -8,7 +8,7 @@ import { ErrorsResponse } from 'src/app/shared/types/errors.types';
   templateUrl: './article-form.component.html',
 })
 export class ArticleFormComponent implements OnInit {
-  @Input() initialValues!: CreateUpdateArticleDto;
+  @Input() initialValues!: CreateUpdateArticleDto | null;
   @Input() isSubmitting!: boolean | null;
   @Input() errors!: ErrorsResponse | undefined | null;
 
@@ -24,10 +24,10 @@ export class ArticleFormComponent implements OnInit {
 
   private initializeForm(): void {
     this.form = this.formBuilder.group({
-      title: this.initialValues.title,
-      description: this.initialValues.description,
-      body: this.initialValues.body,
-      tagList: this.initialValues.tagList.join(' '),
+      title: this.initialValues?.title,
+      description: this.initialValues?.description,
+      body: this.initialValues?.body,
+      tagList: this.initialValues?.tagList.join(' '),
     });
   }
 

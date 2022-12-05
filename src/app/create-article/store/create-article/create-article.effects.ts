@@ -23,7 +23,7 @@ export class CreateArticleEffects {
     ),
   );
 
-  redirectOnCreate$ = createEffect(
+  redirectOnSuccessfulCreate$ = createEffect(
     () =>
       this.actions$.pipe(
         ofType(createArticleSuccessful),

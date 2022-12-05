@@ -17,6 +17,7 @@ import { GlobalFeedModule } from './global-feed/global-feed.module';
 import { PersonalFeedModule } from './personal-feed/personal-feed.module';
 import { FeedByTagModule } from './feed-by-tag/feed-by-tag.module';
 import { CreateArticleModule } from './create-article/create-article.module';
+import { UpdateArticleModule } from './update-article/update-article.module';
 
 @NgModule({
   declarations: [AppComponent],
@@ -36,6 +37,7 @@ import { CreateArticleModule } from './create-article/create-article.module';
     PersonalFeedModule,
     FeedByTagModule,
     CreateArticleModule,
+    UpdateArticleModule,
     ArticleModule,
   ],
   providers: [

@@ -10,9 +10,9 @@ import { UserDto } from 'src/app/shared/types/user.types';
   templateUrl: './feed-toggler.component.html',
 })
 export class FeedTogglerComponent implements OnInit {
-  @Input() currentTag?: string;
+  @Input() currentTag!: string | null;
 
-  isLoggedIn$!: Observable<UserDto | null | undefined>;
+  isLoggedIn$!: Observable<UserDto | undefined | null>;
 
   constructor(private store: Store<AppState>) {}
 

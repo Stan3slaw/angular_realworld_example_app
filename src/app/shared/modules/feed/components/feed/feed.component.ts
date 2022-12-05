@@ -1,4 +1,4 @@
-import { Component, Input, OnDestroy, OnInit } from '@angular/core';
+import { Component, Input, OnChanges, OnDestroy, OnInit, SimpleChanges } from '@angular/core';
 import { ActivatedRoute, Params, Router } from '@angular/router';
 import { select, Store } from '@ngrx/store';
 import { Observable, Subscription } from 'rxjs';
@@ -16,7 +16,7 @@ import { FeedResponseDto } from '../../types/feed.types';
   selector: 'app-feed',
   templateUrl: './feed.component.html',
 })
-export class FeedComponent implements OnInit, OnDestroy {
+export class FeedComponent implements OnInit, OnDestroy, OnChanges {
   @Input() endpoint!: string;
 
   public limit = environment.limit;
@@ -37,6 +37,14 @@ export class FeedComponent implements OnInit, OnDestroy {
 
   ngOnDestroy(): void {
     this.queryParamsSubscription.unsubscribe();
+  }
+
+  ngOnChanges(changes: SimpleChanges): void {
+    const isEndpointChanged =
+      !changes['endpoint'].firstChange && changes['endpoint'].currentValue !== changes['endpoint'].previousValue;
+    if (isEndpointChanged) {
+      this.getFeed();
+    }
   }
 
   private initializeValues(): void {

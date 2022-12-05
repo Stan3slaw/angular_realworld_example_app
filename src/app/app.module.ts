@@ -10,9 +10,12 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { AuthModule } from './auth/auth.module';
 import { NavbarModule } from './shared/modules/navbar/navbar.module';
+import { ArticleModule } from './shared/modules/article/article.module';
 import { PersistanceService } from './shared/services/persistance.service';
 import { AuthInterceptor } from './auth/services/auth.interceptor';
 import { GlobalFeedModule } from './global-feed/global-feed.module';
+import { PersonalFeedModule } from './personal-feed/personal-feed.module';
+import { FeedByTagModule } from './feed-by-tag/feed-by-tag.module';
 
 @NgModule({
   declarations: [AppComponent],
@@ -29,6 +32,9 @@ import { GlobalFeedModule } from './global-feed/global-feed.module';
     AuthModule,
     NavbarModule,
     GlobalFeedModule,
+    PersonalFeedModule,
+    FeedByTagModule,
+    ArticleModule,
   ],
   providers: [
     PersistanceService,

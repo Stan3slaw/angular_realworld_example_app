@@ -7,11 +7,11 @@ import type { ErrorsResponse } from 'src/app/shared/types/errors.types';
   templateUrl: './form-errors.component.html',
 })
 export class FormErrorsComponent implements OnInit {
-  @Input() formErrors?: ErrorsResponse | null;
+  @Input() public formErrors?: ErrorsResponse | null;
 
   public errorsMessages?: string[] | null;
 
-  ngOnInit(): void {
+  public ngOnInit(): void {
     this.errorsMessages =
       this.formErrors &&
       Object.keys(this.formErrors).map((name) => {

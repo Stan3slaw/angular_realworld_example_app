@@ -8,7 +8,7 @@ import { getCurrentUserFailed, getCurrentUserInitialized, getCurrentUserSuccessf
 
 @Injectable()
 export class UserEffects {
-  getCurrentUser$ = createEffect(() =>
+  public getCurrentUser$ = createEffect(() =>
     this.actions$.pipe(
       ofType(getCurrentUserInitialized),
       mergeMap(() => {
@@ -25,7 +25,7 @@ export class UserEffects {
     ),
   );
 
-  constructor(
+  public constructor(
     private actions$: Actions,
     private authService: AuthService,
     private persistanceService: PersistanceService,

@@ -9,7 +9,7 @@ import { updateArticleFailed, updateArticleInitialized, updateArticleSuccessful 
 
 @Injectable()
 export class UpdateArticleEffects {
-  updateArticle$ = createEffect(() =>
+  public updateArticle$ = createEffect(() =>
     this.actions$.pipe(
       ofType(updateArticleInitialized),
       mergeMap(({ slug, updateArticleDto }) =>
@@ -23,7 +23,7 @@ export class UpdateArticleEffects {
     ),
   );
 
-  redirectOnSuccessfulUpdate$ = createEffect(
+  public redirectOnSuccessfulUpdate$ = createEffect(
     () =>
       this.actions$.pipe(
         ofType(updateArticleSuccessful),
@@ -34,5 +34,9 @@ export class UpdateArticleEffects {
     { dispatch: false },
   );
 
-  constructor(private actions$: Actions, private updateArticleService: UpdateArticleService, private router: Router) {}
+  public constructor(
+    private actions$: Actions,
+    private updateArticleService: UpdateArticleService,
+    private router: Router,
+  ) {}
 }

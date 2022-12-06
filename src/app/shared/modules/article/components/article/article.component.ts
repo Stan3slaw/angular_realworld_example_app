@@ -25,15 +25,15 @@ export class ArticleComponent implements OnInit, OnDestroy {
   public errors$!: Observable<ErrorsResponse | undefined>;
   public isAuthor$!: Observable<boolean>;
 
-  constructor(private store: Store<AppState>, private route: ActivatedRoute) {}
+  public constructor(private store: Store<AppState>, private route: ActivatedRoute) {}
 
-  ngOnInit(): void {
+  public ngOnInit(): void {
     this.initializeValues();
     this.initializeListeners();
     this.fetchData();
   }
 
-  ngOnDestroy(): void {
+  public ngOnDestroy(): void {
     this.articleSubscription.unsubscribe();
   }
 

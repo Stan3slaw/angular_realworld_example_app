@@ -9,7 +9,7 @@ import { UserProfile, UserProfileResponseDto } from '../types/user-profile.types
 
 @Injectable()
 export class UserProfileService {
-  constructor(private http: HttpClient) {}
+  public constructor(private http: HttpClient) {}
 
   public getUserProfile(slug: string | null): Observable<UserProfile> {
     const url = `${environment.apiUrl}/profiles/${slug}`;

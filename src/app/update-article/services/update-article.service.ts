@@ -6,9 +6,9 @@ import { environment } from 'src/environments/environment';
 
 @Injectable()
 export class UpdateArticleService {
-  constructor(private http: HttpClient) {}
+  public constructor(private http: HttpClient) {}
 
-  updateArticle(slug: string | null, updateArticleDto: CreateUpdateArticleDto): Observable<Article> {
+  public updateArticle(slug: string | null, updateArticleDto: CreateUpdateArticleDto): Observable<Article> {
     const url = `${environment.apiUrl}/articles/${slug}`;
 
     return this.http.put<ArticleResponseDto>(url, { article: updateArticleDto }).pipe(

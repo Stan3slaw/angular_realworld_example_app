@@ -6,15 +6,15 @@ import { environment } from 'src/environments/environment';
 
 @Injectable()
 export class LikeService {
-  constructor(private http: HttpClient) {}
+  public constructor(private http: HttpClient) {}
 
-  addToFavorites(slug: string): Observable<Article> {
+  public addToFavorites(slug: string): Observable<Article> {
     const url = this.getUrl(slug);
 
     return this.http.post<ArticleResponseDto>(url, {}).pipe(map(this.getArticle));
   }
 
-  removeFromFavorites(slug: string): Observable<Article> {
+  public removeFromFavorites(slug: string): Observable<Article> {
     const url = this.getUrl(slug);
 
     return this.http.delete<ArticleResponseDto>(url).pipe(map(this.getArticle));

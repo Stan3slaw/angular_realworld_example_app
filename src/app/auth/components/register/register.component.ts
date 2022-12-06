@@ -18,14 +18,14 @@ export class RegisterComponent implements OnInit {
   public isLoading$!: Observable<boolean>;
   public errors$!: Observable<ErrorsResponse | undefined>;
 
-  constructor(private formBuilder: FormBuilder, private store: Store<AppState>) {}
+  public constructor(private formBuilder: FormBuilder, private store: Store<AppState>) {}
 
-  ngOnInit(): void {
+  public ngOnInit(): void {
     this.initializeForm();
     this.initializeValues();
   }
 
-  initializeForm(): void {
+  private initializeForm(): void {
     this.form = this.formBuilder.group({
       username: new FormControl(''),
       email: new FormControl(''),
@@ -33,12 +33,12 @@ export class RegisterComponent implements OnInit {
     });
   }
 
-  initializeValues(): void {
+  private initializeValues(): void {
     this.isLoading$ = this.store.pipe(select(getIsLoading));
     this.errors$ = this.store.pipe(select(getErrors));
   }
 
-  onSubmit(): void {
+  public onSubmit(): void {
     const registerDto: RegisterDto = {
       user: this.form.value,
     };

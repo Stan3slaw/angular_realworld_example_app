@@ -8,7 +8,7 @@ import { logout } from './logout.actions';
 
 @Injectable()
 export class LogoutEffects {
-  logout$ = createEffect(
+  public logout$ = createEffect(
     () =>
       this.actions$.pipe(
         ofType(logout),
@@ -20,5 +20,9 @@ export class LogoutEffects {
     { dispatch: false },
   );
 
-  constructor(private actions$: Actions, private persistanceService: PersistanceService, private router: Router) {}
+  public constructor(
+    private actions$: Actions,
+    private persistanceService: PersistanceService,
+    private router: Router,
+  ) {}
 }

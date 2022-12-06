@@ -9,7 +9,7 @@ import { addToFavoritesFailed, addToFavoritesInitialized, addToFavoritesSuccessf
 
 @Injectable()
 export class LikeEffects {
-  like$ = createEffect(() =>
+  public like$ = createEffect(() =>
     this.actions$.pipe(
       ofType(addToFavoritesInitialized),
       mergeMap(({ isFavorited, slug }) => {
@@ -29,5 +29,5 @@ export class LikeEffects {
     ),
   );
 
-  constructor(private actions$: Actions, private likeService: LikeService) {}
+  public constructor(private actions$: Actions, private likeService: LikeService) {}
 }

@@ -17,7 +17,7 @@ import { FeedResponseDto } from '../../types/feed.types';
   templateUrl: './feed.component.html',
 })
 export class FeedComponent implements OnInit, OnDestroy, OnChanges {
-  @Input() endpoint!: string;
+  @Input() public endpoint!: string;
 
   public limit = environment.limit;
   public baseUrl!: string;
@@ -28,18 +28,18 @@ export class FeedComponent implements OnInit, OnDestroy, OnChanges {
   public error$!: Observable<ErrorsResponse | undefined>;
   public feed$!: Observable<FeedResponseDto | undefined>;
 
-  constructor(private store: Store<AppState>, private router: Router, private route: ActivatedRoute) {}
+  public constructor(private store: Store<AppState>, private router: Router, private route: ActivatedRoute) {}
 
-  ngOnInit(): void {
+  public ngOnInit(): void {
     this.initializeValues();
     this.initializeListeners();
   }
 
-  ngOnDestroy(): void {
+  public ngOnDestroy(): void {
     this.queryParamsSubscription.unsubscribe();
   }
 
-  ngOnChanges(changes: SimpleChanges): void {
+  public ngOnChanges(changes: SimpleChanges): void {
     const isEndpointChanged =
       !changes['endpoint'].firstChange && changes['endpoint'].currentValue !== changes['endpoint'].previousValue;
     if (isEndpointChanged) {

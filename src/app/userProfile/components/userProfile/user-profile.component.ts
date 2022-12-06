@@ -26,9 +26,9 @@ export class UserProfileComponent implements OnInit {
 
   private slug!: string | null;
 
-  constructor(private store: Store<AppState>, private route: ActivatedRoute, private router: Router) {}
+  public constructor(private store: Store<AppState>, private route: ActivatedRoute, private router: Router) {}
 
-  ngOnInit(): void {
+  public ngOnInit(): void {
     this.initializeValues();
     this.initializeListeners();
   }

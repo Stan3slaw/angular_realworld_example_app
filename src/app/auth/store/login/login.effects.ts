@@ -10,7 +10,7 @@ import { loginFailed, loginInitialized, loginSuccessful } from './login.actions'
 
 @Injectable()
 export class LoginEffects {
-  login$ = createEffect(() =>
+  public login$ = createEffect(() =>
     this.actions$.pipe(
       ofType(loginInitialized),
       mergeMap(({ loginDto }) =>
@@ -28,7 +28,7 @@ export class LoginEffects {
     ),
   );
 
-  redirectOnSuccessfulLogin$ = createEffect(
+  public redirectOnSuccessfulLogin$ = createEffect(
     () =>
       this.actions$.pipe(
         ofType(loginSuccessful),
@@ -39,7 +39,7 @@ export class LoginEffects {
     { dispatch: false },
   );
 
-  constructor(
+  public constructor(
     private actions$: Actions,
     private authService: AuthService,
     private persistanceService: PersistanceService,

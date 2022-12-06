@@ -8,15 +8,15 @@ import { Article, ArticleResponseDto } from '../../../types/articles.types';
 
 @Injectable()
 export class ArticleService {
-  constructor(private http: HttpClient) {}
+  public constructor(private http: HttpClient) {}
 
-  getArticle(slug: string | null): Observable<Article> {
+  public getArticle(slug: string | null): Observable<Article> {
     const url = `${environment.apiUrl}/articles/${slug}`;
 
     return this.http.get<ArticleResponseDto>(url).pipe(map((response: ArticleResponseDto) => response.article));
   }
 
-  deleteArticle(slug: string | null): Observable<unknown> {
+  public deleteArticle(slug: string | null): Observable<unknown> {
     const url = `${environment.apiUrl}/articles/${slug}`;
 
     return this.http.delete<unknown>(url);

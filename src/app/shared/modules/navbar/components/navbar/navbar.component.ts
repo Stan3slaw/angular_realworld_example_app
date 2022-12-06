@@ -13,13 +13,13 @@ import { UserDto } from 'src/app/shared/types/user.types';
 export class NavbarComponent implements OnInit {
   public user$!: Observable<UserDto | undefined | null>;
 
-  constructor(private store: Store<AppState>) {}
+  public constructor(private store: Store<AppState>) {}
 
-  ngOnInit(): void {
+  public ngOnInit(): void {
     this.user$ = this.store.pipe(select(getUser));
   }
 
-  logout(): void {
+  public logout(): void {
     this.store.dispatch(logout());
   }
 }

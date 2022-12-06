@@ -8,21 +8,21 @@ import { addToFavoritesInitialized } from '../../store/like/like.actions';
   templateUrl: './like.component.html',
 })
 export class LikeComponent implements OnInit {
-  @Input() isFavoritedProps!: boolean;
-  @Input() favoritesCountProps!: number;
-  @Input() articleSlug!: string;
+  @Input() public isFavoritedProps!: boolean;
+  @Input() public favoritesCountProps!: number;
+  @Input() public articleSlug!: string;
 
   public isFavorited!: boolean;
   public favoritesCount!: number;
 
-  constructor(private store: Store) {}
+  public constructor(private store: Store) {}
 
-  ngOnInit(): void {
+  public ngOnInit(): void {
     this.isFavorited = this.isFavoritedProps;
     this.favoritesCount = this.favoritesCountProps;
   }
 
-  handleLike(): void {
+  public handleLike(): void {
     this.store.dispatch(
       addToFavoritesInitialized({
         isFavorited: this.isFavorited,

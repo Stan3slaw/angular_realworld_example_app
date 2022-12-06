@@ -9,25 +9,25 @@ import type { AuthResponseDto, LoginDto, RegisterDto } from '../types/auth.types
 
 @Injectable()
 export class AuthService {
-  constructor(private http: HttpClient) {}
+  public constructor(private http: HttpClient) {}
 
   private getUser(response: AuthResponseDto): UserDto {
     return response.user;
   }
 
-  register(registerDto: RegisterDto): Observable<UserDto> {
+  public register(registerDto: RegisterDto): Observable<UserDto> {
     const url = environment.apiUrl + '/users';
 
     return this.http.post<AuthResponseDto>(url, registerDto).pipe(map(this.getUser));
   }
 
-  login(loginDto: LoginDto): Observable<UserDto> {
+  public login(loginDto: LoginDto): Observable<UserDto> {
     const url = environment.apiUrl + '/users/login';
 
     return this.http.post<AuthResponseDto>(url, loginDto).pipe(map(this.getUser));
   }
 
-  getCurrentUser(): Observable<UserDto> {
+  public getCurrentUser(): Observable<UserDto> {
     const url = environment.apiUrl + '/user';
 
     return this.http.get<AuthResponseDto>(url).pipe(map(this.getUser));

@@ -5,5 +5,5 @@ import { Component, Input } from '@angular/core';
   templateUrl: './error-message.component.html',
 })
 export class ErrorMessageComponent {
-  @Input() errorMessage = 'Something went wrong';
+  @Input() public errorMessage = 'Something went wrong';
 }

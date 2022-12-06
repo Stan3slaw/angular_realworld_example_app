@@ -8,7 +8,7 @@ import { getUserProfileFailed, getUserProfileInitialized, getUserProfileSuccessf
 
 @Injectable()
 export class UserProfileEffects {
-  getUserProfile$ = createEffect(() =>
+  public getUserProfile$ = createEffect(() =>
     this.actions$.pipe(
       ofType(getUserProfileInitialized),
       mergeMap(({ slug }) =>
@@ -22,5 +22,5 @@ export class UserProfileEffects {
     ),
   );
 
-  constructor(private actions$: Actions, private userProfileService: UserProfileService) {}
+  public constructor(private actions$: Actions, private userProfileService: UserProfileService) {}
 }

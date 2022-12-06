@@ -9,9 +9,9 @@ export class FeedByTagComponent implements OnInit {
   public endpoint!: string;
   public currentTag!: string | null;
 
-  constructor(private route: ActivatedRoute) {}
+  public constructor(private route: ActivatedRoute) {}
 
-  ngOnInit(): void {
+  public ngOnInit(): void {
     this.route.params.subscribe((params: Params) => {
       this.currentTag = params['slug'];
       this.endpoint = `/articles?tag=${this.currentTag}`;

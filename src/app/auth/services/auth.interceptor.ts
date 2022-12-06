@@ -5,9 +5,9 @@ import { PersistanceService } from 'src/app/shared/services/persistance.service'
 
 @Injectable()
 export class AuthInterceptor implements HttpInterceptor {
-  constructor(private persistanceService: PersistanceService) {}
+  public constructor(private persistanceService: PersistanceService) {}
 
-  intercept(req: HttpRequest<unknown>, next: HttpHandler): Observable<HttpEvent<unknown>> {
+  public intercept(req: HttpRequest<unknown>, next: HttpHandler): Observable<HttpEvent<unknown>> {
     const token = this.persistanceService.get('jwt-token');
     const clonedRequest = req.clone({
       setHeaders: {

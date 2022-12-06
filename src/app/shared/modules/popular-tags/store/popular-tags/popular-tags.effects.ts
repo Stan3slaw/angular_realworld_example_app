@@ -8,7 +8,7 @@ import { getPopularTagsFailed, getPopularTagsInitialized, getPopularTagsSuccessf
 
 @Injectable()
 export class PopularTagsEffects {
-  getFeed$ = createEffect(() =>
+  public getFeed$ = createEffect(() =>
     this.actions$.pipe(
       ofType(getPopularTagsInitialized),
       mergeMap(() =>
@@ -22,5 +22,5 @@ export class PopularTagsEffects {
     ),
   );
 
-  constructor(private actions$: Actions, private popularTagsService: PopularTagsService) {}
+  public constructor(private actions$: Actions, private popularTagsService: PopularTagsService) {}
 }

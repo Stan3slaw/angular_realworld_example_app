@@ -8,7 +8,7 @@ import { getArticleFailed, getArticleInitialized, getArticleSuccessful } from '.
 
 @Injectable()
 export class ArticleEffects {
-  getArticle$ = createEffect(() =>
+  public getArticle$ = createEffect(() =>
     this.actions$.pipe(
       ofType(getArticleInitialized),
       mergeMap(({ slug }) =>
@@ -22,5 +22,5 @@ export class ArticleEffects {
     ),
   );
 
-  constructor(private actions$: Actions, private articleService: ArticleService) {}
+  public constructor(private actions$: Actions, private articleService: ArticleService) {}
 }

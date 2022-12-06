@@ -23,9 +23,9 @@ export class CreateArticleComponent implements OnInit {
   public isLoading$!: Observable<boolean>;
   public errors$!: Observable<ErrorsResponse | undefined>;
 
-  constructor(private store: Store<AppState>) {}
+  public constructor(private store: Store<AppState>) {}
 
-  ngOnInit(): void {
+  public ngOnInit(): void {
     this.isLoading$ = this.store.pipe(select(getIsLoading));
     this.errors$ = this.store.pipe(select(getErrors));
   }

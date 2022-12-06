@@ -8,7 +8,7 @@ import { getFeedFailed, getFeedInitialized, getFeedSuccessful } from './feed.act
 
 @Injectable()
 export class FeedEffects {
-  getFeed$ = createEffect(() =>
+  public getFeed$ = createEffect(() =>
     this.actions$.pipe(
       ofType(getFeedInitialized),
       mergeMap(({ endpoint }) =>
@@ -22,5 +22,5 @@ export class FeedEffects {
     ),
   );
 
-  constructor(private actions$: Actions, private feedService: FeedService) {}
+  public constructor(private actions$: Actions, private feedService: FeedService) {}
 }

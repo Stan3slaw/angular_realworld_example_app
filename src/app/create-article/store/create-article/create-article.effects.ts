@@ -9,7 +9,7 @@ import { createArticleFailed, createArticleInitialized, createArticleSuccessful 
 
 @Injectable()
 export class CreateArticleEffects {
-  createArticle$ = createEffect(() =>
+  public createArticle$ = createEffect(() =>
     this.actions$.pipe(
       ofType(createArticleInitialized),
       mergeMap(({ createArticleDto }) =>
@@ -23,7 +23,7 @@ export class CreateArticleEffects {
     ),
   );
 
-  redirectOnSuccessfulCreate$ = createEffect(
+  public redirectOnSuccessfulCreate$ = createEffect(
     () =>
       this.actions$.pipe(
         ofType(createArticleSuccessful),
@@ -34,5 +34,9 @@ export class CreateArticleEffects {
     { dispatch: false },
   );
 
-  constructor(private actions$: Actions, private createArticleService: CreateArticleService, private router: Router) {}
+  public constructor(
+    private actions$: Actions,
+    private createArticleService: CreateArticleService,
+    private router: Router,
+  ) {}
 }

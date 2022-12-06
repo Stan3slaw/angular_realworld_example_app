@@ -8,9 +8,9 @@ import { getCurrentUserInitialized } from './auth/store/user/user.actions';
   templateUrl: './app.component.html',
 })
 export class AppComponent implements OnInit {
-  constructor(private store: Store) {}
+  public constructor(private store: Store) {}
 
-  ngOnInit(): void {
+  public ngOnInit(): void {
     this.store.dispatch(getCurrentUserInitialized());
   }
 }

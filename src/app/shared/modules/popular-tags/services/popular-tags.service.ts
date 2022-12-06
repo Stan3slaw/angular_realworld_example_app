@@ -7,9 +7,9 @@ import { PopularTagsResponseDto } from '../types/popular-tags.types';
 
 @Injectable()
 export class PopularTagsService {
-  constructor(private http: HttpClient) {}
+  public constructor(private http: HttpClient) {}
 
-  getPopularTags(): Observable<string[]> {
+  public getPopularTags(): Observable<string[]> {
     const url = environment.apiUrl + '/tags';
 
     return this.http.get<PopularTagsResponseDto>(url).pipe(map((response: PopularTagsResponseDto) => response.tags));

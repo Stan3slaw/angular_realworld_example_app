@@ -12,13 +12,13 @@ import { getErrors, getIsLoading, getPopularTags } from '../../store/popular-tag
   templateUrl: './popular-tags.component.html',
 })
 export class PopularTagsComponent implements OnInit {
-  popularTags$!: Observable<string[] | undefined>;
-  isLoading$!: Observable<boolean>;
-  errors$!: Observable<ErrorsResponse | undefined>;
+  public popularTags$!: Observable<string[] | undefined>;
+  public isLoading$!: Observable<boolean>;
+  public errors$!: Observable<ErrorsResponse | undefined>;
 
-  constructor(private store: Store<AppState>) {}
+  public constructor(private store: Store<AppState>) {}
 
-  ngOnInit(): void {
+  public ngOnInit(): void {
     this.initializeValues();
     this.fetchData();
   }

@@ -9,7 +9,7 @@ import { deleteArticleFailed, deleteArticleInitialized, deleteArticleSuccessful 
 
 @Injectable()
 export class DeleteArticleEffects {
-  deleteArticle$ = createEffect(() =>
+  public deleteArticle$ = createEffect(() =>
     this.actions$.pipe(
       ofType(deleteArticleInitialized),
       mergeMap(({ slug }) =>
@@ -23,7 +23,7 @@ export class DeleteArticleEffects {
     ),
   );
 
-  redirectOnSuccessfulDelete$ = createEffect(
+  public redirectOnSuccessfulDelete$ = createEffect(
     () =>
       this.actions$.pipe(
         ofType(deleteArticleSuccessful),
@@ -34,5 +34,5 @@ export class DeleteArticleEffects {
     { dispatch: false },
   );
 
-  constructor(private actions$: Actions, private articleService: ArticleService, private router: Router) {}
+  public constructor(private actions$: Actions, private articleService: ArticleService, private router: Router) {}
 }

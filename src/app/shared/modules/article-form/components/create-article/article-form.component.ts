@@ -8,17 +8,17 @@ import { ErrorsResponse } from 'src/app/shared/types/errors.types';
   templateUrl: './article-form.component.html',
 })
 export class ArticleFormComponent implements OnInit {
-  @Input() initialValues!: CreateUpdateArticleDto | null;
-  @Input() isSubmitting!: boolean | null;
-  @Input() errors!: ErrorsResponse | undefined | null;
+  @Input() public initialValues!: CreateUpdateArticleDto | null;
+  @Input() public isSubmitting!: boolean | null;
+  @Input() public errors!: ErrorsResponse | undefined | null;
 
-  @Output() submitArticle = new EventEmitter<CreateUpdateArticleDto>();
+  @Output() public submitArticle = new EventEmitter<CreateUpdateArticleDto>();
 
   public form!: FormGroup;
 
-  constructor(private formBuilder: FormBuilder) {}
+  public constructor(private formBuilder: FormBuilder) {}
 
-  ngOnInit(): void {
+  public ngOnInit(): void {
     this.initializeForm();
   }
 
@@ -31,7 +31,7 @@ export class ArticleFormComponent implements OnInit {
     });
   }
 
-  handleSubmit(): void {
+  public handleSubmit(): void {
     this.submitArticle.emit(this.form.value);
   }
 }

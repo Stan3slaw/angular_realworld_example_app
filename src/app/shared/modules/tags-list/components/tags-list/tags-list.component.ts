@@ -5,5 +5,5 @@ import { Component, Input } from '@angular/core';
   templateUrl: './tags-list.component.html',
 })
 export class TagsListComponent {
-  @Input() tags!: string[];
+  @Input() public tags!: string[];
 }

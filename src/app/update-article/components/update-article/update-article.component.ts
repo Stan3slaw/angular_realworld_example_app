@@ -22,14 +22,14 @@ export class UpdateArticleComponent implements OnInit {
   public errors$!: Observable<ErrorsResponse | undefined>;
   private slug!: string | null;
 
-  constructor(private store: Store<AppState>, private route: ActivatedRoute) {}
+  public constructor(private store: Store<AppState>, private route: ActivatedRoute) {}
 
-  ngOnInit(): void {
+  public ngOnInit(): void {
     this.initializeValues();
-    this.fetchData();
+    this.getArticle();
   }
 
-  initializeValues(): void {
+  private initializeValues(): void {
     this.slug = this.route.snapshot.paramMap.get('slug');
     this.isLoading$ = this.store.pipe(select(getIsLoading));
     this.errors$ = this.store.pipe(select(getErrors));
@@ -47,7 +47,7 @@ export class UpdateArticleComponent implements OnInit {
     );
   }
 
-  fetchData(): void {
+  private getArticle(): void {
     this.store.dispatch(getArticleInitialized({ slug: this.slug }));
   }
 

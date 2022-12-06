@@ -10,7 +10,7 @@ import { registerFailed, registerInitialized, registerSuccessful } from './regis
 
 @Injectable()
 export class RegisterEffects {
-  register$ = createEffect(() =>
+  public register$ = createEffect(() =>
     this.actions$.pipe(
       ofType(registerInitialized),
       mergeMap(({ registerDto }) =>
@@ -28,7 +28,7 @@ export class RegisterEffects {
     ),
   );
 
-  redirectOnSuccessfulRegistration$ = createEffect(
+  public redirectOnSuccessfulRegistration$ = createEffect(
     () =>
       this.actions$.pipe(
         ofType(registerSuccessful),
@@ -39,7 +39,7 @@ export class RegisterEffects {
     { dispatch: false },
   );
 
-  constructor(
+  public constructor(
     private actions$: Actions,
     private authService: AuthService,
     private persistanceService: PersistanceService,

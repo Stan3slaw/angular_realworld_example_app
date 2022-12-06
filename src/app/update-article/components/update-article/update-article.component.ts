@@ -8,9 +8,8 @@ import { AppState } from 'src/app/shared/types/app-state.types';
 import { Article, CreateUpdateArticleDto } from 'src/app/shared/modules/article/types/article.types';
 import { ErrorsResponse } from 'src/app/shared/types/errors.types';
 
-import { updateArticleInitialized } from '../../store/create-article/update-article.actions';
-
-import { getErrors, getIsLoading } from '../../store/create-article/update-article.selectors';
+import { updateArticleInitialized } from '../../store/update-article/update-article.actions';
+import { getErrors, getIsLoading } from '../../store/update-article/update-article.selectors';
 
 @Component({
   selector: 'app-update-article',

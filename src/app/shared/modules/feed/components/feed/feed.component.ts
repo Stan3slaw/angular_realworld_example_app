@@ -3,7 +3,6 @@ import { ActivatedRoute, Params, Router } from '@angular/router';
 import { select, Store } from '@ngrx/store';
 import { Observable, Subscription } from 'rxjs';
 import { parseUrl, stringify } from 'query-string';
-
 import { AppState } from 'src/app/shared/types/app-state.types';
 import { ErrorsResponse } from 'src/app/shared/types/errors.types';
 import { environment } from 'src/environments/environment';

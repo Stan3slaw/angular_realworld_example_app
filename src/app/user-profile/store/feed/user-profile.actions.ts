@@ -1,5 +1,4 @@
 import { createAction, props } from '@ngrx/store';
-
 import { ErrorsResponse } from 'src/app/shared/types/errors.types';
 
 import { UserProfile } from '../../types/user-profile.types';

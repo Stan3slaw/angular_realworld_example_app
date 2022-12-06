@@ -8,8 +8,8 @@ import { ArticleFormModule } from '../shared/modules/article-form/article-form.m
 import { LoadingModule } from '../shared/modules/loading/loading.module';
 import { UpdateArticleComponent } from './components/update-article/update-article.component';
 import { UpdateArticleService } from './services/update-article.service';
-import { UpdateArticleEffects } from './store/create-article/update-article.effects';
-import { updateArticleReducer } from './store/create-article/update-article.reducer';
+import { UpdateArticleEffects } from './store/update-article/update-article.effects';
+import { updateArticleReducer } from './store/update-article/update-article.reducer';
 
 const routes: Routes = [
   {

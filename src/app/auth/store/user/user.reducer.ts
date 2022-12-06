@@ -1,5 +1,4 @@
 import { createReducer, on } from '@ngrx/store';
-
 import { UserDto } from 'src/app/shared/types/user.types';
 
 import { loginSuccessful } from '../login/login.actions';

@@ -1,9 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-
 import { Observable, Subscription, combineLatest, filter, map } from 'rxjs';
 import { Store, select } from '@ngrx/store';
 import { ActivatedRoute, Router, Params } from '@angular/router';
-
 import { getUser } from 'src/app/auth/store/user/user.selectors';
 import { AppState } from 'src/app/shared/types/app-state.types';
 import { ErrorsResponse } from 'src/app/shared/types/errors.types';

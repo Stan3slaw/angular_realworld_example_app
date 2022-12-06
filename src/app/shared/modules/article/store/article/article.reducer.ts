@@ -1,10 +1,9 @@
 import { createReducer, on } from '@ngrx/store';
 import { Article } from 'src/app/shared/modules/article/types/article.types';
 import { ErrorsResponse } from 'src/app/shared/types/errors.types';
-import { updateArticleSuccessful } from 'src/app/update-article/store/create-article/update-article.actions';
+import { updateArticleSuccessful } from 'src/app/update-article/store/update-article/update-article.actions';
 
 import { deleteArticleSuccessful } from '../delete-article/delete-article.actions';
-
 import { getArticleFailed, getArticleInitialized, getArticleSuccessful } from './article.actions';
 
 export interface ArticleState {

@@ -4,8 +4,8 @@ import { Observable } from 'rxjs';
 import { AppState } from 'src/app/shared/types/app-state.types';
 import { ErrorsResponse } from 'src/app/shared/types/errors.types';
 
-import { getPopularTagsInitialized } from '../store/popular-tags/popular-tags.actions';
-import { getErrors, getIsLoading, getPopularTags } from '../store/popular-tags/popular-tags.selectors';
+import { getPopularTagsInitialized } from '../../store/popular-tags/popular-tags.actions';
+import { getErrors, getIsLoading, getPopularTags } from '../../store/popular-tags/popular-tags.selectors';
 
 @Component({
   selector: 'app-popular-tags',

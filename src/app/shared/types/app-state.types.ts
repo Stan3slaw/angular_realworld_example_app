@@ -3,6 +3,7 @@ import { RegisterState } from 'src/app/auth/store/register/register.reducer';
 import { UserState } from 'src/app/auth/store/user/user.reducer';
 import { CreateArticleState } from 'src/app/create-article/store/create-article/create-article.reducer';
 import { UpdateArticleState } from 'src/app/update-article/store/create-article/update-article.reducer';
+import { UserProfileState } from 'src/app/userProfile/store/feed/user-profile.reducer';
 
 import { ArticleState } from '../modules/article/store/article/article.reducer';
 import { FeedState } from '../modules/feed/store/feed/feed.reducer';
@@ -17,4 +18,5 @@ export interface AppState {
   article: ArticleState;
   createArticle: CreateArticleState;
   updateArticle: UpdateArticleState;
+  userProfile: UserProfileState;
 }

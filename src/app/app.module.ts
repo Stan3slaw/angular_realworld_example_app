@@ -19,6 +19,7 @@ import { FeedByTagModule } from './feed-by-tag/feed-by-tag.module';
 import { CreateArticleModule } from './create-article/create-article.module';
 import { UpdateArticleModule } from './update-article/update-article.module';
 import { LikeModule } from './shared/modules/like/like.module';
+import { UserProfileModule } from './userProfile/user-profile.module';
 
 @NgModule({
   declarations: [AppComponent],
@@ -41,6 +42,7 @@ import { LikeModule } from './shared/modules/like/like.module';
     UpdateArticleModule,
     ArticleModule,
     LikeModule,
+    UserProfileModule,
   ],
   providers: [
     PersistanceService,

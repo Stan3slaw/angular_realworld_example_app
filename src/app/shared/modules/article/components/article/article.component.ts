@@ -4,7 +4,7 @@ import { select, Store } from '@ngrx/store';
 import { combineLatest, map, Observable, Subscription } from 'rxjs';
 import { getUser } from 'src/app/auth/store/user/user.selectors';
 import { AppState } from 'src/app/shared/types/app-state.types';
-import { Article } from 'src/app/shared/types/articles.types';
+import { Article } from 'src/app/shared/modules/article/types/article.types';
 import { ErrorsResponse } from 'src/app/shared/types/errors.types';
 import { UserDto } from 'src/app/shared/types/user.types';
 

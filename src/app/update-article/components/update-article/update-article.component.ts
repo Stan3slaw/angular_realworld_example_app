@@ -5,7 +5,7 @@ import { filter, map, Observable } from 'rxjs';
 import { getArticleInitialized } from 'src/app/shared/modules/article/store/article/article.actions';
 import { getArticle } from 'src/app/shared/modules/article/store/article/article.selectors';
 import { AppState } from 'src/app/shared/types/app-state.types';
-import { Article, CreateUpdateArticleDto } from 'src/app/shared/types/articles.types';
+import { Article, CreateUpdateArticleDto } from 'src/app/shared/modules/article/types/article.types';
 import { ErrorsResponse } from 'src/app/shared/types/errors.types';
 
 import { updateArticleInitialized } from '../../store/create-article/update-article.actions';

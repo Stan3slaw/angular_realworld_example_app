@@ -1,7 +1,11 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { map, Observable } from 'rxjs';
-import { Article, ArticleResponseDto, CreateUpdateArticleDto } from 'src/app/shared/types/articles.types';
+import {
+  Article,
+  ArticleResponseDto,
+  CreateUpdateArticleDto,
+} from 'src/app/shared/modules/article/types/article.types';
 import { environment } from 'src/environments/environment';
 
 @Injectable()

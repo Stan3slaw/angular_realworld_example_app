@@ -1,4 +1,4 @@
-import { Article } from 'src/app/shared/types/articles.types';
+import { Article } from 'src/app/shared/modules/article/types/article.types';
 
 export interface FeedResponseDto {
   articles: Article[];

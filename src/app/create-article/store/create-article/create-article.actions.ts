@@ -1,5 +1,5 @@
 import { createAction, props } from '@ngrx/store';
-import { Article, CreateUpdateArticleDto } from 'src/app/shared/types/articles.types';
+import { Article, CreateUpdateArticleDto } from 'src/app/shared/modules/article/types/article.types';
 import { ErrorsResponse } from 'src/app/shared/types/errors.types';
 
 import { ActionTypes } from './action.types';

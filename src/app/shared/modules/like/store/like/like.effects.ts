@@ -2,7 +2,7 @@ import type { HttpErrorResponse } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Actions, createEffect, ofType } from '@ngrx/effects';
 import { catchError, of, map, mergeMap } from 'rxjs';
-import { Article } from 'src/app/shared/types/articles.types';
+import { Article } from 'src/app/shared/modules/article/types/article.types';
 
 import { LikeService } from '../../services/like.service';
 import { addToFavoritesFailed, addToFavoritesInitialized, addToFavoritesSuccessful } from './like.actions';

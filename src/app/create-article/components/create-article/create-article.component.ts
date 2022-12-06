@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { select, Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
 import { AppState } from 'src/app/shared/types/app-state.types';
-import { CreateUpdateArticleDto } from 'src/app/shared/types/articles.types';
+import { CreateUpdateArticleDto } from 'src/app/shared/modules/article/types/article.types';
 import { ErrorsResponse } from 'src/app/shared/types/errors.types';
 
 import { createArticleInitialized } from '../../store/create-article/create-article.actions';

@@ -1,5 +1,5 @@
 import { createReducer, on } from '@ngrx/store';
-import { Article } from 'src/app/shared/types/articles.types';
+import { Article } from 'src/app/shared/modules/article/types/article.types';
 import { ErrorsResponse } from 'src/app/shared/types/errors.types';
 import { updateArticleSuccessful } from 'src/app/update-article/store/create-article/update-article.actions';
 

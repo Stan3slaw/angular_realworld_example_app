@@ -1,4 +1,4 @@
-import { UserProfile } from './user.types';
+import { UserProfile } from '../../../types/user.types';
 
 export interface Article {
   author: UserProfile;

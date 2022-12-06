@@ -3,6 +3,7 @@ import { createReducer, on } from '@ngrx/store';
 import { UserDto } from 'src/app/shared/types/user.types';
 
 import { loginSuccessful } from '../login/login.actions';
+import { logout } from '../logout/logout.actions';
 import { registerSuccessful } from '../register/register.actions';
 import { getCurrentUserFailed, getCurrentUserInitialized, getCurrentUserSuccessful } from './user.actions';
 
@@ -55,6 +56,13 @@ export const userReducer = createReducer(
       ...initialState,
       user: action.userResponseDto,
       loading: false,
+    }),
+  ),
+  on(
+    logout,
+    (): UserState => ({
+      ...initialState,
+      user: null,
     }),
   ),
 );

@@ -12,6 +12,7 @@ import { RegisterComponent } from './components/register/register.component';
 import { AuthService } from './services/auth.service';
 import { LoginEffects } from './store/login/login.effects';
 import { loginReducer } from './store/login/login.reducer';
+import { LogoutEffects } from './store/logout/logout.effects';
 import { RegisterEffects } from './store/register/register.effects';
 import { registerReducer } from './store/register/register.reducer';
 import { UserEffects } from './store/user/user.effects';
@@ -36,7 +37,7 @@ const routes: Routes = [
     StoreModule.forFeature('register', registerReducer),
     StoreModule.forFeature('login', loginReducer),
     StoreModule.forFeature('user', userReducer),
-    EffectsModule.forFeature([RegisterEffects, LoginEffects, UserEffects]),
+    EffectsModule.forFeature([RegisterEffects, LoginEffects, UserEffects, LogoutEffects]),
     FormErrorsModule,
   ],
   declarations: [RegisterComponent, LoginComponent],

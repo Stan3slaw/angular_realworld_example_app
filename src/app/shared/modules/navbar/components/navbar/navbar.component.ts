@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { select, Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
+import { logout } from 'src/app/auth/store/logout/logout.actions';
 import { getUser } from 'src/app/auth/store/user/user.selectors';
 import { AppState } from 'src/app/shared/types/app-state.types';
 import { UserDto } from 'src/app/shared/types/user.types';
@@ -16,5 +17,9 @@ export class NavbarComponent implements OnInit {
 
   ngOnInit(): void {
     this.user$ = this.store.pipe(select(getUser));
+  }
+
+  logout(): void {
+    this.store.dispatch(logout());
   }
 }

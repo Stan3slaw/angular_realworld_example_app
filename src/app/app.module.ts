@@ -18,6 +18,7 @@ import { PersonalFeedModule } from './personal-feed/personal-feed.module';
 import { FeedByTagModule } from './feed-by-tag/feed-by-tag.module';
 import { CreateArticleModule } from './create-article/create-article.module';
 import { UpdateArticleModule } from './update-article/update-article.module';
+import { LikeModule } from './shared/modules/like/like.module';
 
 @NgModule({
   declarations: [AppComponent],
@@ -39,6 +40,7 @@ import { UpdateArticleModule } from './update-article/update-article.module';
     CreateArticleModule,
     UpdateArticleModule,
     ArticleModule,
+    LikeModule,
   ],
   providers: [
     PersistanceService,

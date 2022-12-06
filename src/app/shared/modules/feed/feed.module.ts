@@ -6,6 +6,7 @@ import { StoreModule } from '@ngrx/store';
 
 import { UtilsService } from '../../services/utils.service';
 import { ErrorMessageModule } from '../error-message/error-message.module';
+import { LikeModule } from '../like/like.module';
 import { LoadingModule } from '../loading/loading.module';
 import { TagsListModule } from '../tags-list/tags-list.module';
 import { FeedComponent } from './components/feed/feed.component';
@@ -23,6 +24,7 @@ import { feedReducer } from './store/feed/feed.reducer';
     ErrorMessageModule,
     LoadingModule,
     TagsListModule,
+    LikeModule,
   ],
   declarations: [FeedComponent, PaginationComponent],
   exports: [FeedComponent],
